@@ -1,0 +1,12 @@
+{
+  "name": "podcast-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "podcast-feed-parser": "^1.0.4",
+    "zx": "^4.3.0"
+  }
+}
