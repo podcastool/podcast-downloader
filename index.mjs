@@ -13,7 +13,12 @@ if (resp.ok) {
   await $`mkdir -p videos`
 
   for (const episode of podcast.episodes) {
-    console.log(`Downloading episode: ${episode.title}`)
-    await $`wget ${episode.enclosure.url} -O ./videos/${episode.title}.mp3`
+    const file_name = `./videos/${episode.title.replace(/\//g, '')}.mp3`
+
+    if (fs.pathExistsSync(file_name)) {
+      continue
+    }
+
+    await $`wget ${episode.enclosure.url} -O ${file_name}`
   }
 }
